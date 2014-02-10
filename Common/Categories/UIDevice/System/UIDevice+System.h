@@ -10,6 +10,8 @@
 
 @interface UIDevice (System)
 
++ (BOOL) isDeviceRunningiOS7OrAbove;
++ (BOOL) isDeviceRunningiOS6OrAbove;
 + (BOOL) isDeviceRunningiOS5OrAbove;
 
 @end
