@@ -26,7 +26,7 @@
     [super setUp];
     
     self.array = @[@1, @2, @3, @4, @5, @6, @7];
-    self.fractionArray = @[@1, @2, @3, @4, @5, @6];
+    self.fractionArray = @[@1, @2.2, @0.1, @4, @5, @6];
     self.nonNumberArray = @[@1, @2, @3, @"Fourth", @5, @6];
     
 }
@@ -44,28 +44,43 @@
 
 #pragma mark - Valid
 
-- (void) testMeanOfContainedNumbers
+- (void) testWholeMeanOfContainedNumbers
 {
-    XCTAssert([self.array meanValueOfContainedNumbers] == 4, @"Mean of array should have been 4");
+    XCTAssert([self.array meanWholeValueOfContainedNumbers] == 4, @"Mean of array should have been 4");
 }
 
-- (void) testIgnoresFractionMeanOfContainedNumbers
+- (void) testFractionMeanOfContainedNumbers
 {
-    XCTAssert([self.fractionArray meanValueOfContainedNumbers] == 3, @"Mean of array should disregard fraction");
+    XCTAssert([self.fractionArray meanFractionValueOfContainedNumbers] == 3.05f, @"Mean of array should have been 3.5");
+}
+
+- (void) testRoundsWholeMeanOfContainedNumbersWhenMeanIsAFraction
+{
+    XCTAssert([self.fractionArray meanWholeValueOfContainedNumbers] == 3, @"Mean of array should disregard fraction");
 }
 
 #pragma mark - Empty 
 
-- (void) testEmptyArray
+- (void) testEmptyArrayForWholeMean
 {
-    XCTAssert([@[] meanValueOfContainedNumbers] == 0, @"Mean of an empty array should be 0");
+    XCTAssert([@[] meanWholeValueOfContainedNumbers] == 0, @"Mean of an empty array should be 0");
+}
+
+- (void) testEmptyArrayForFractionMean
+{
+    XCTAssert([@[] meanFractionValueOfContainedNumbers] == 0, @"Mean of an empty array should be 0");
 }
 
 #pragma mark - Invalid
 
-- (void) testArrayContainsNonNumberTypes
+- (void) testArrayContainsNonNumberTypesForWholeMean
 {
-    XCTAssert([self.nonNumberArray meanValueOfContainedNumbers] == 0, @"Mean of an array with invalid contents should be 0");
+    XCTAssert([self.nonNumberArray meanWholeValueOfContainedNumbers] == 0, @"Mean of an array with invalid contents should be 0");
+}
+
+- (void) testArrayContainsNonNumberTypesForFractionMean
+{
+    XCTAssert([self.nonNumberArray meanFractionValueOfContainedNumbers] == 0, @"Mean of an array with invalid contents should be 0");
 }
 
 @end

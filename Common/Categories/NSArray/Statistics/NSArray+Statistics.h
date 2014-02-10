@@ -10,6 +10,7 @@
 
 @interface NSArray (Statistics)
 
-- (NSInteger) meanValueOfContainedNumbers;
+- (NSInteger) meanWholeValueOfContainedNumbers;
+- (float) meanFractionValueOfContainedNumbers;
 
 @end
