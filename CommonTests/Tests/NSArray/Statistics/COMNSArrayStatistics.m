@@ -12,6 +12,8 @@
 @interface COMNSArrayStatistics : XCTestCase
 
 @property (nonatomic, strong) NSArray *array;
+@property (nonatomic, strong) NSArray *fractionArray;
+@property (nonatomic, strong) NSArray *nonNumberArray;
 
 @end
 
@@ -23,7 +25,9 @@
 {
     [super setUp];
     
-    self.array = @[@"First", @"Second", @"Third", @"Fourth", @"Fifth", @"Sixth"];
+    self.array = @[@1, @2, @3, @4, @5, @6, @7];
+    self.fractionArray = @[@1, @2, @3, @4, @5, @6];
+    self.nonNumberArray = @[@1, @2, @3, @"Fourth", @5, @6];
     
 }
 
@@ -32,6 +36,8 @@
 - (void)tearDown
 {
     self.array = nil;
+    self.fractionArray = nil;
+    self.nonNumberArray = nil;
     
     [super tearDown];
 }
@@ -40,7 +46,26 @@
 
 - (void) testMeanOfContainedNumbers
 {
-    XCTAssert(TRUE, @"Universe has just exploded, good bye");
+    XCTAssert([self.array meanValueOfContainedNumbers] == 4, @"Mean of array should have been 4");
+}
+
+- (void) testIgnoresFractionMeanOfContainedNumbers
+{
+    XCTAssert([self.fractionArray meanValueOfContainedNumbers] == 3, @"Mean of array should disregard fraction");
+}
+
+#pragma mark - Empty 
+
+- (void) testEmptyArray
+{
+    XCTAssert([@[] meanValueOfContainedNumbers] == 0, @"Mean of an empty array should be 0");
+}
+
+#pragma mark - Invalid
+
+- (void) testArrayContainsNonNumberTypes
+{
+    XCTAssert([self.nonNumberArray meanValueOfContainedNumbers] == 0, @"Mean of an array with invalid contents should be 0");
 }
 
 @end
