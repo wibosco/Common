@@ -10,8 +10,15 @@
 
 @interface UIColor (RGB)
 
-+ (UIColor *) RGBColorWithRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue;
++ (UIColor *) colorWithRGBValuesForRed:(CGFloat)red
+                                 green:(CGFloat)green
+                                  blue:(CGFloat)blue
+                                 alpha:(CGFloat)alpha;
 
-+ (NSString *) RGBForCSS:(UIColor *)color;
+
+- (CGFloat) redValue;
+- (CGFloat) greenValue;
+- (CGFloat) blueValue;
+- (CGFloat) alphaValue;
 
 @end

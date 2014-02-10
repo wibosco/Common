@@ -12,27 +12,76 @@
 
 #pragma mark - RGB
 
-+ (UIColor *) RGBColorWithRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue
++ (UIColor *) colorWithRGBValuesForRed:(CGFloat)red
+                                 green:(CGFloat)green
+                                  blue:(CGFloat)blue
+                                 alpha:(CGFloat)alpha
 {
     return [UIColor colorWithRed:red/255.0f
                            green:green/255.0f
                             blue:blue/255.0f
-                           alpha:1.0f];
+                           alpha:alpha];
 }
 
-+ (NSString *) RGBForCSS:(UIColor *)color
+
+- (CGFloat) redValue
 {
     CGFloat red = 0.0f;
     CGFloat green = 0.0f;
     CGFloat blue = 0.0f;
     CGFloat alpha = 0.0f;
     
-    [color getRed:&red
-            green:&green
-             blue:&blue
-            alpha:&alpha];
+    [self getRed:&red
+           green:&green
+            blue:&blue
+           alpha:&alpha];
     
-    return [NSString stringWithFormat:@"rgb(%lu,%lu,%lu)", (unsigned long)(red*255.0f), (unsigned long)(green*255.0f), (unsigned long)(blue*255.0f)];
+    return red;
+}
+
+- (CGFloat) greenValue
+{
+    CGFloat red = 0.0f;
+    CGFloat green = 0.0f;
+    CGFloat blue = 0.0f;
+    CGFloat alpha = 0.0f;
+    
+    [self getRed:&red
+           green:&green
+            blue:&blue
+           alpha:&alpha];
+    
+    return green;
+}
+
+- (CGFloat) blueValue
+{
+    CGFloat red = 0.0f;
+    CGFloat green = 0.0f;
+    CGFloat blue = 0.0f;
+    CGFloat alpha = 0.0f;
+    
+    [self getRed:&red
+           green:&green
+            blue:&blue
+           alpha:&alpha];
+    
+    return blue;
+}
+
+- (CGFloat) alphaValue
+{
+    CGFloat red = 0.0f;
+    CGFloat green = 0.0f;
+    CGFloat blue = 0.0f;
+    CGFloat alpha = 0.0f;
+    
+    [self getRed:&red
+           green:&green
+            blue:&blue
+           alpha:&alpha];
+    
+    return alpha;
 }
 
 @end
