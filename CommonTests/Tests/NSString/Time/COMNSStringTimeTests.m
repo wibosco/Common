@@ -29,7 +29,7 @@
     [super tearDown];
 }
 
-#pragma mark - Valid
+#pragma mark - Non-zero
 
 - (void)testTimeWithHourAndMinuteComponent
 {
@@ -58,6 +58,8 @@
                           @"200:00",
                           @"Integer value isn't correctly formatted");
 }
+
+#pragma mark - Zero
 
 - (void)testTimeWithZeroParameter
 {

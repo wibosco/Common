@@ -25,14 +25,12 @@
     [super setUp];
     
     self.objectBlockTest = [[NSObject alloc] init];
-    
 }
 
 #pragma mark - Teardown
 
 - (void) tearDown
 {
-    
     self.objectBlockTest = nil;
     
     [super tearDown];
