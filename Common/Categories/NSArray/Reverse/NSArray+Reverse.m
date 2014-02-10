@@ -12,19 +12,28 @@
 
 #pragma mark - Reverse
 
-- (NSArray *) reversedArray
++ (NSArray *) reverseArray:(NSArray *)reverseArray
 {
-    NSMutableArray *reversedArray = [NSMutableArray arrayWithCapacity:[self count]];
+    NSMutableArray *reversedArray = nil;
     
-    NSEnumerator *enumerator = [self reverseObjectEnumerator];
-    
-    for (id element in enumerator)
+    if (reverseArray)
     {
-        [reversedArray addObject:element];
+        reversedArray = [NSMutableArray arrayWithCapacity:[reverseArray count]];
+        
+        NSEnumerator *enumerator = [reverseArray reverseObjectEnumerator];
+        
+        for (id element in enumerator)
+        {
+            [reversedArray addObject:element];
+        }
     }
     
-    return reversedArray;
+    return [reversedArray copy];
 }
 
+- (NSArray *) reversedArray
+{
+    return [NSArray reverseArray:self];
+}
 
 @end
