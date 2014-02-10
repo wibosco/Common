@@ -1,6 +1,6 @@
 //
 //  NSArray+Statistics.m
-//  pathway
+//  Common
 //
 //  Created by William Boles on 07/09/2012.
 //

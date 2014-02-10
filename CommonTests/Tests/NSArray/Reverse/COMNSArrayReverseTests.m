@@ -58,19 +58,19 @@
 
 #pragma mark - Type
 
-//- (void)testReturnedObjectIsOfTypeImmutableArrayInstance
-//{
-//    XCTAssertEqualObjects([NSArray class],
-//                          [[self.array reversedArray] class],
-//                          @"NSArray should be returned");
-//}
-//
-//- (void)testReturnedObjectIsOfTypeImmutableArrayClass
-//{
-//    XCTAssertEqualObjects([NSArray class],
-//                          [[NSArray reverseArray:self.array] class],
-//                          @"NSArray should be returned");
-//}
+- (void)testReturnedObjectIsOfTypeImmutableArrayInstance
+{
+    XCTAssertEqualObjects([NSArray classForCoder],
+                          [[self.array reversedArray] classForCoder],
+                          @"NSArray should be returned");
+}
+
+- (void)testReturnedObjectIsOfTypeImmutableArrayClass
+{
+    XCTAssertEqualObjects([NSArray classForCoder],
+                          [[NSArray reverseArray:self.array] classForCoder],
+                          @"NSArray should be returned");
+}
 
 #pragma mark - Empty
 
