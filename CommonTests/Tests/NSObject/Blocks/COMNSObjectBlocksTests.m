@@ -10,13 +10,13 @@
 #import "NSObject+Blocks.h"
 #import "XCTestCase+AsyncTesting.h"
 
-@interface COMNSObjectBlocksTest : XCTestCase
+@interface COMNSObjectBlocksTests : XCTestCase
 
 @property (nonatomic, strong) NSObject *objectBlockTest;
 
 @end
 
-@implementation COMNSObjectBlocksTest
+@implementation COMNSObjectBlocksTests
 
 #pragma mark - Setup
 

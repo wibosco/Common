@@ -14,48 +14,28 @@
 
 - (BOOL) isEmpty
 {
-    if ([self length] == 0) {
-        
-        return YES;
-        
-    } else {
-        
-        NSString *trimmedString = [self stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        
-        if ([trimmedString length] == 0) {
-            
-            return YES;
-            
-        }
-    }
-    
-    return NO; 
+    return [NSString isStringEmpty:self];
 }
 
 + (BOOL) isStringEmpty:(NSString *)string
 {
-    if ([string isKindOfClass:[NSNull class]]){
-        
-        return YES;
-        
-    }
+    BOOL isStringEmpty = YES;
     
-    if ([string length] == 0) {
+    if (string)
+    {
         
-        return YES;
-        
-    } else {
-        
-        NSString *trimmedString = [string stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        
-        if ([trimmedString length] == 0) {
+        if ([string length] != 0)
+        {
+            NSString *trimmedString = [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
             
-            return YES;
-            
+            if ([trimmedString length] != 0)
+            {
+                return NO;
+            }
         }
     }
     
-    return NO;
+    return isStringEmpty;
 }
 
 @end
