@@ -21,7 +21,7 @@
 
 #pragma mark - Setup
 
-- (void)setUp
+- (void) setUp
 {
     [super setUp];
     
@@ -33,7 +33,7 @@
 
 #pragma mark - Teardown
 
-- (void)tearDown
+- (void) tearDown
 {
     self.array = nil;
     self.fractionArray = nil;

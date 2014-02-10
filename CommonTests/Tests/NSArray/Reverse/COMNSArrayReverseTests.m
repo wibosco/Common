@@ -38,7 +38,7 @@
 
 #pragma mark - Valid
 
-- (void)testContentOfArrayIsReversedInstance
+- (void) testContentOfArrayIsReversedInstance
 {
     NSArray *reversedArray = @[@"Sixth", @"Fifth", @"Fourth", @"Third", @"Second", @"First"];
     
@@ -47,7 +47,7 @@
                           @"Content of array should have been reversed");
 }
 
-- (void)testContentOfArrayIsReversedClass
+- (void) testContentOfArrayIsReversedClass
 {
     NSArray *reversedArray = @[@"Sixth", @"Fifth", @"Fourth", @"Third", @"Second", @"First"];
     
@@ -58,7 +58,7 @@
 
 #pragma mark - Type
 
-- (void)testReturnedObjectIsOfTypeImmutableArrayInstance
+- (void) testReturnedObjectIsOfTypeImmutableArrayInstance
 {
     XCTAssertEqualObjects([NSArray classForCoder],
                           [[self.array reversedArray] classForCoder],
