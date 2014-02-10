@@ -11,7 +11,6 @@
 @interface NSArray (Reverse)
 
 - (NSArray *) reversedArray;
-
 + (NSArray *) reverseArray:(NSArray *)reverseArray;
 
 @end

@@ -14,16 +14,16 @@
 {
     if ([self count] != 0)
     {
-        NSUInteger i = 0;
-        NSUInteger j = [self count] - 1;
+        NSUInteger upwardsCount = 0;
+        NSUInteger downwardsCount = [self count] - 1;
         
-        while (i < j)
+        while (upwardsCount < downwardsCount)
         {
-            [self exchangeObjectAtIndex:i
-                      withObjectAtIndex:j];
+            [self exchangeObjectAtIndex:upwardsCount
+                      withObjectAtIndex:downwardsCount];
             
-            i++;
-            j--;
+            upwardsCount++;
+            downwardsCount--;
         }
     }
 }

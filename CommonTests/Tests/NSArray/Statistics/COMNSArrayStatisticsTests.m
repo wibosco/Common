@@ -9,7 +9,7 @@
 #import <XCTest/XCTest.h>
 #import "NSArray+Statistics.h"
 
-@interface COMNSArrayStatistics : XCTestCase
+@interface COMNSArrayStatisticsTests : XCTestCase
 
 @property (nonatomic, strong) NSArray *array;
 @property (nonatomic, strong) NSArray *fractionArray;
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation COMNSArrayStatistics
+@implementation COMNSArrayStatisticsTests
 
 #pragma mark - Setup
 
